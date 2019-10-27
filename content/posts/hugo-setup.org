@@ -7,7 +7,7 @@ tags:
 - Blog setup
 ---
 
-Exploring using hugo as a static site generator, partially because it supports
+Exploring using [[https://gohugo.io][Hugo]] as a static site generator, partially because it supports
 [[https://orgmode.org][org-mode]], and partially because there's some additional widgets for hugo that
 I'd like to explore.  Below are the steps followed to create this post:
 

@@ -27,18 +27,19 @@ Edit ~config.toml~ to replace ~hyde~ with ~beautifulhugo~.
 ** Syntax highlighting
 
 Now we want to enable syntax highlighting for code snippets.  The docs don't
-seem to cover syntax highlighting for org-more files, but let's see what
+seem to cover syntax highlighting for org-mode files, but let's see what
 happens if we configure for markdown.  With luck, we'll get the org-mode
 behaviour too.  So add the following to the ~config.toml~ file:
-Hmm, that gives us syntax highlighting, but also removes the distinct layout
-for code blocks.  But removing the ~pygmentsUseClasses~ option gives us the
-desired behaviour of syntax highlighting honouring the language specified in
-the org-mode source block header.
 
 #+BEGIN_SRC 
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 #+END_SRC
+
+Hmm, that gives us syntax highlighting, but also removes the distinct layout
+for code blocks.  But removing the ~pygmentsUseClasses~ option gives us the
+desired behaviour of syntax highlighting honouring the language specified in
+the org-mode source block header.
 
 ** Configuration template
 
