@@ -1,0 +1,49 @@
+---
+title: "Theme Setup"
+subtitle: "Testing"
+date: 2019-10-13T20:47:12+01:00
+draft: false
+Tags: 
+- Hugo 
+- Blog setup
+- Theme
+---
+
+I like the look of the [[https://themes.gohugo.io/beautifulhugo/][Beautiful Hugo]] theme, so let's see how easy it is to setup.
+
+ <!--more-->
+
+** Installing Beautiful Hugo
+
+First step, is adding the git submodule:
+
+#+BEGIN_SRC bash
+git submodule add https://github.com/halogenica/beautifulhugo.git themes/beautifulhugo
+#+END_SRC
+
+** Setting the theme
+
+Edit ~config.toml~ to replace ~hyde~ with ~beautifulhugo~.
+
+** Syntax highlighting
+
+Now we want to enable syntax highlighting for code snippets.  The docs don't
+seem to cover syntax highlighting for org-more files, but let's see what
+happens if we configure for markdown.  With luck, we'll get the org-mode
+behaviour too.  So add the following to the ~config.toml~ file:
+Hmm, that gives us syntax highlighting, but also removes the distinct layout
+for code blocks.  But removing the ~pygmentsUseClasses~ option gives us the
+desired behaviour of syntax highlighting honouring the language specified in
+the org-mode source block header.
+
+#+BEGIN_SRC 
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+#+END_SRC
+
+** Configuration template
+
+Take a look at ~themes/beautifulhugo/exampleSite/~ (and especially the
+~config.toml~ file there) for more customisation options.  I've set up author
+information, github/rss links in the footer, and post tags from the template -
+it's pretty self-explanatory.

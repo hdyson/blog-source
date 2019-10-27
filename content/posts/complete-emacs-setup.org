@@ -1,0 +1,10 @@
+---
+title: "Complete Emacs Setup"
+date: 2019-10-15T20:34:49+01:00
+draft: false
+Tags:
+- emacs
+---
+
+Following on from [[https://boingboing.net/2016/09/30/finally-got-my-emacs-setup-jus.html][Boing Boing]], I finally got my emacs setup just how I like
+it:  [[./HAL9000.jpg]] 

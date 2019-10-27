@@ -1,0 +1,27 @@
+baseURL = "https://hdyson.dev/"
+languageCode = "en-us"
+title = "Exploring code"
+theme = "beautifulhugo"
+
+pygmentsCodeFences = true
+
+[Params]
+#  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
+  subtitle = "Some thoughts and opinions on code and coding tools. Likely to feature an emphasis on emacs and python."
+  rss = true
+  showRelatedPosts = true
+
+[Author]
+  name = "hdyson"
+  website = "https://hdyson.dev"
+  github = "hdyson"
+
+[[menu.main]]
+    name = "Blog"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3

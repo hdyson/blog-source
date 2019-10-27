@@ -1,0 +1,59 @@
+---
+title: "Hugo setup in org format"
+date: 2019-10-12T17:05:21+01:00
+draft: false
+tags:
+- Hugo
+- Blog setup
+---
+
+Exploring using hugo as a static site generator, partially because it supports
+[[https://orgmode.org][org-mode]], and partially because there's some additional widgets for hugo that
+I'd like to explore.  Below are the steps followed to create this post:
+
+ <!--more-->
+
+** Experimenting with hugo: initial setup
+#+BEGIN_SRC bash
+brew install hugo
+hugo new site quickstart
+cd quickstart/
+git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+echo 'theme = "ananke"' >> config.toml
+#+END_SRC
+
+** Adding a post:
+
+ #+BEGIN_SRC bash
+ hugo new posts/hugo-setup.org
+ #+END_SRC
+
+Obviously, change ~hugo-setup.org~ for subsequent posts.
+
+** Change them to hyde:
+
+It's fairly ubiquitous, but let's start with [[https://themes.gohugo.io/hyde/][hyde]] as a theme anyway:
+
+#+BEGIN_SRC bash
+cd themes/
+git clone https://github.com/spf13/hyde.git
+cd -
+#+END_SRC
+
+Finally, edit ~config.toml~ to update the theme.
+
+** Running server:
+
+ Automaticically reloads when content changes.
+
+ #+BEGIN_SRC bash
+ hugo server -D
+ #+END_SRC
+
+ -D flag includes draft posts.
+
+** Notes:
+
+ Important to note that if the ~<!--more-->~ line is missing in a post, the post remains unformatted.
+

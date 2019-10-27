@@ -1,0 +1,18 @@
+---
+title: "Deploying to Github Pages"
+date: 2019-10-27T19:52:03Z
+draft: false
+tags:
+- Blog setup
+- Github
+- Deployment
+---
+
+Deploying Hugo generated site to [[https://pages.github.com/][Github pages]] (and hence [[https://hdyson.dev][hdyson.dev]]) via the instructions from the [[https://gohugo.io/hosting-and-deployment/hosting-on-github/][Hugo docs]].
+
+To summarise:
+
+1. [[https://github.com/new][Create]] source and ~<username>.github.io~ (for the built version) repos on Github.
+
+
+
