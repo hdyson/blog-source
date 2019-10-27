@@ -55,5 +55,6 @@ Finally, edit ~config.toml~ to update the theme.
 
 ** Notes:
 
- Important to note that if the ~<!--more-->~ line is missing in a post, the post remains unformatted.
+1. Important to note that if the ~<!--more-->~ line is missing in a post, the post remains unformatted.
+2. Images can be referenced in a as ~./<filename>~ if it's stored in a directory of the same name as the post without the ~.org~ suffix.
 
