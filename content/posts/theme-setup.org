@@ -1,6 +1,5 @@
 ---
-title: "Theme Setup"
-subtitle: "Testing"
+title: "Theme setup"
 date: 2019-10-13T20:47:12+01:00
 draft: false
 Tags: 

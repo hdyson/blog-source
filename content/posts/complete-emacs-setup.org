@@ -1,5 +1,5 @@
 ---
-title: "Complete Emacs Setup"
+title: "Complete emacs setup"
 date: 2019-10-15T20:34:49+01:00
 draft: false
 Tags:
