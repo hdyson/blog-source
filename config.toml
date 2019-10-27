@@ -1,4 +1,4 @@
-baseURL = "https://hdyson.dev/"
+baseURL = "https://hdyson.github.io/"
 languageCode = "en-us"
 title = "Exploring code"
 theme = "beautifulhugo"
