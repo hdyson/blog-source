@@ -16,4 +16,5 @@ Summarising the steps I went through, we have:
 
 1. From the [[https://utteranc.es][utterances]] webpage, install utterances to the deployed repository (i.e. ~<username>.github.io~).
 2. Still on the utterances webpage, set up the repo, blog post to issue mapping, theme, etc.  As these are changed, the script at the bottom of the page to copy and paste will update automatically.
-3. Copy the "enable uttterances" script to ~./layouts/partials/footer_custom.html~ (this path may be different for a different theme - check the theme docs).
+3. +Copy the "enable uttterances" script to ~./layouts/partials/footer_custom.html~ (this path may be different for a different theme - check the theme docs).+  Okay, this didn't work for me (the comment box was below the footer and too small to be useful).  Instead, I found that adding the utterances script to ~./themes/beautifulhugo/layouts/_default/single.html~ in the right location (immediately before the section for disqus or staticman comments) was sufficient.
+
