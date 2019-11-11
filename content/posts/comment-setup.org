@@ -1,7 +1,7 @@
 ---
 title: "Comment Setup"
 date: 2019-11-10T20:02:48Z
-draft: true
+draft: false
 tags:
 - Blog setup
 - Comments
@@ -17,4 +17,3 @@ Summarising the steps I went through, we have:
 1. From the [[https://utteranc.es][utterances]] webpage, install utterances to the deployed repository (i.e. ~<username>.github.io~).
 2. Still on the utterances webpage, set up the repo, blog post to issue mapping, theme, etc.  As these are changed, the script at the bottom of the page to copy and paste will update automatically.
 3. Copy the "enable uttterances" script to ~./layouts/partials/footer_custom.html~ (this path may be different for a different theme - check the theme docs).
-
