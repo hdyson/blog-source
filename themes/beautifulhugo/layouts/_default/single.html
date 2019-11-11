@@ -26,7 +26,6 @@
           {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
             {{ $.Scratch.Set "has_related" true }}
           {{ end }}
-
           {{ if $.Scratch.Get "has_related" }}
                   <h4 class="see-also">{{ i18n "seeAlso" }}</h4>
                   <ul>
@@ -54,6 +53,14 @@
           {{ end }}
         </ul>
       {{ end }}
+	<script src="https://utteranc.es/client.js"
+		repo="hdyson/hdyson.github.io"
+		issue-term="title"
+		theme="github-light"
+		crossorigin="anonymous"
+		async>
+	</script>
+
 
 
       {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
