@@ -1,14 +1,11 @@
 ---
 title: "Making Init Files Intelligible"
 date: 2019-10-15T20:53:56+01:00
-draft: true
+draft: false
 tags:
 - emacs
 - org-mode
 ---
-
-
-** Documenting the init file
 
 One of the issues with an editor as configurable as emacs is that an emacs
 .init.el file ends up an unmaintanable mess of barely understood code
@@ -17,8 +14,8 @@ forgotten knowledge.
 
 We can do better.
 
-So in this post I'll show you how to have a documented, human-readable
-~.init.el~.
+So in this post I'll show you how to have a documented, human-readable emacs
+configuration file.
 
 <!--more-->
 
@@ -27,8 +24,8 @@ So in this post I'll show you how to have a documented, human-readable
 Emacs is massively customisable.  These customisations are stored in elisp
 source files (e.g. ~~/.emacs.d/init.el~), which are interpreted by emacs on
 startup.  The difficulty is that these files are usually composed of various
-snippets from a variety of sources, which results in an unmaintanable
-configuration.
+snippets from a variety of sources, which results in a
+configuration that can be hard to read and maintain.
 
 ** The solution
 
@@ -46,9 +43,9 @@ of comments, we're now talking about a document with a smattering of code.
 But a document for configuration is only useful if it can be interpreted by
 emacs.  This is where ~org-babel~ comes in.  This translates the ~org-mode~
 file and extracts all the code blocks.  The documentation includes an example
-that does exactly [[https://orgmode.org/worg/org-contrib/babel/intro.html#literate-emacs-init][what we need]] it translates the document into code on
-starting up emacs, which is then interpreted by emacs.  So the init file is
-always up to date whenever you restart emacs.
+that does exactly [[https://orgmode.org/worg/org-contrib/babel/intro.html#literate-emacs-init][what we need]].  This example ~init.el~ translates the
+document into code on starting up emacs, which is then interpreted by emacs.
+So the init file is always up to date whenever you restart emacs.
 
 I recommend keeping your ~~/.emacs.d/~ directory as a git repository, synced
 to [[https://github.com][Github]].  As a bonus, github renders the ~org-mode~ file in the same fashion
@@ -56,10 +53,15 @@ that it renders markdown or jupyter notebooks.  If you choose to name the main
 configuration file ~README.org~, then this is the page that renders as the
 front page of the repository.
 
-Here's some examples.  I'll be expanding on them in future:
+Here's some examples:
 
-+ Raw (i.e. unrendered) [[https://raw.githubusercontent.com/hdyson/Emacs-configuration/d8e4d388a4ab976f84cf71f74a5e9d1f472cc2f2/README.org][README.org]] - this is the form in which the configuration file is written.
-+ How Github [[https://github.com/hdyson/Emacs-configuration/tree/d8e4d388a4ab976f84cf71f74a5e9d1f472cc2f2][renders the file]].  Much more readable.
-+ An example of [[https://pages.sachachua.com/.emacs.d/Sacha.html][how well this scales]].  This is a link to Sacha Chua's config (of [[https://sachachua.com/blog/category/geek/emacs/emacs-news][emacs news]]).
-+ A reminder that you'll need some [[https://orgmode.org/worg/org-contrib/babel/intro.html#literate-emacs-init][boilerplate]] in your ~~/.emacs.d/init.el~ file.
-
++ Raw (i.e. unrendered) [[https://raw.githubusercontent.com/hdyson/Emacs-configuration/62013322cadde299168cb5e530377051ec05e265/readme.org][readme.org]] - this is the form in which the
+  configuration file is written.  Note that ~org-mode~ makes this easier to
+  use when opened in emacs rather than a web browser.
++ How Github [[https://github.com/hdyson/Emacs-configuration/blob/62013322cadde299168cb5e530377051ec05e265/readme.org][renders the file]].  Much more readable.  Note that this link and
+  the previous link are to a snapshot in time; the current ~readme.org~ may
+  have diverged from this.
++ An example of [[https://pages.sachachua.com/.emacs.d/Sacha.html][how well this scales]].  This is a link to Sacha Chua's config
+  (of [[https://sachachua.com/blog/category/geek/emacs/emacs-news][emacs news fame]]).
++ A reminder that you'll need some [[https://orgmode.org/worg/org-contrib/babel/intro.html#literate-emacs-init][boilerplate]] in your ~~/.emacs.d/init.el~
+  file.
