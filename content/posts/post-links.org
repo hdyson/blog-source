@@ -1,0 +1,26 @@
+---
+title: "Post links"
+date: 2020-01-30T22:09:50Z
+draft: false
+Tags: 
+- Hugo 
+- Blog setup
+---
+
+It's not obvious (to me, anyway) how to use [[https://gohugo.io/content-management/cross-references/][hugo cross-reference links]] with
+org-mode format posts.  This very short post gives an example of how to do so.
+
+<!--more-->
+
+Here's an example for linking to this post:
+
+[[{{< ref "/posts/post-links.org" >}}]]
+
+#+BEGIN_SRC
+[[{{</* ref "/posts/post-links.org" */>}}]]
+#+END_SRC
+The org-mode link syntax needs to be used in addition to the curly braces.
+The use of ~/* ... */~ (which you'll only see if you're looking at the source
+of this repo on github) to escape Hugo rendering the literal example is from
+[[https://liatas.com/posts/escaping-hugo-shortcodes/][this post]].
+

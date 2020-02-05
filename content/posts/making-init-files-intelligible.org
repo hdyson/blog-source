@@ -1,5 +1,5 @@
 ---
-title: "Making Init Files Intelligible"
+title: "Making init files intelligible"
 date: 2019-10-15T20:53:56+01:00
 draft: false
 tags:
