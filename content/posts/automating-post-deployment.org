@@ -1,7 +1,7 @@
 ---
-title: "Automating Post Deployment"
+title: "Automating post deployment"
 date: 2020-02-09T14:33:05Z
-draft: true
+draft: false
 Tags:
 - Hugo
 - Blog setup
@@ -36,8 +36,14 @@ there's no need for anything after step 1 to be manual.
 * Solution
 
 After writing or amending a post, commit the changes locally and then run the
-modified ~deploy.sh~ (same commit as initial version of this post - I'll
-update with a link).  The original version of the script came from the [[https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script][hugo
+modified [[https://github.com/hdyson/blog-source/blob/master/deploy.sh][deploy.sh]].  The original version of the script came from the [[https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script][hugo
 docs]]; the description and comments implies that the new behaviour is what was
 intended for the script?  Either way, this version works for me now, while
 previously I had to perform the extra steps.
+
+* Update
+
+It looks like the original script doesn't perform the git push stage if
+there's nothing to commit - e.g. if the commit was done manually.  So it may
+be that separating the push into two steps isn't necessary, but if it ain't
+broke...
