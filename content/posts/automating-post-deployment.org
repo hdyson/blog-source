@@ -1,0 +1,43 @@
+---
+title: "Automating Post Deployment"
+date: 2020-02-09T14:33:05Z
+draft: true
+Tags:
+- Hugo
+- Blog setup
+- Github
+- Github actions
+---
+
+* The problem
+
+Publishing posts via hugo is slightly more manual than I'd like.  The trigger
+for this post was "Can we automate this with [[https://github.com/features/actions][Github actions]]?", but it turns
+out the solution was much simpler.
+
+<!--more-->
+
+* Background
+
+The setup for the initial deployment was described in
+[[{{< ref "/posts/deploying-to-github-pages" >}}][this post]].
+
+For adding a new post or amendments to a post, the procedure is:
+
+1. Run the ~deploy.sh~ script.
+2. Commit and push the changes to the source repo.
+3. ~cd~ to ~public~ directory in source repo.
+4. ~git push~ to push to the built site repo.
+
+My first throughs where whether we could automate steps 3 and 4 with [[https://github.com/features/actions][Github
+actions]]?  But I think a better approach is to modify the ~deploy.sh~ script -
+there's no need for anything after step 1 to be manual.
+
+* Solution
+
+After writing or amending a post, commit the changes locally and then run the
+modified ~deploy.sh~ (same commit as initial version of this post - I'll
+update with a link).  The original version of the script came from the [[https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script][hugo
+docs]]; the description and comments implies that the new behaviour is what was
+intended for the script?  Either way, this version works for me now, while
+previously I had to perform the extra steps.

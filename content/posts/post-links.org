@@ -2,8 +2,8 @@
 title: "Post links"
 date: 2020-01-30T22:09:50Z
 draft: false
-Tags: 
-- Hugo 
+Tags:
+- Hugo
 - Blog setup
 ---
 
@@ -23,4 +23,3 @@ The org-mode link syntax needs to be used in addition to the curly braces.
 The use of ~/* ... */~ (which you'll only see if you're looking at the source
 of this repo on github) to escape Hugo rendering the literal example is from
 [[https://liatas.com/posts/escaping-hugo-shortcodes/][this post]].
-
