@@ -22,12 +22,15 @@ msg="rebuilding site $(date)"
 if [ -n "$*" ]; then
 	msg="$*"
 fi
-git commit -m "$msg"
+# Echo here is mainly to avoid early termination of the script - "git commit"
+# returns exit code of 1 if there's no changes to commit (despite it not being
+# an error).
+git commit -m "$msg" || echo "no changes needed to be committed"
 
 # Push source repo:
 cd -
-git push origin master
+git push -v origin master
 # And push deployed repo:
 cd ${PUBLIC}
-git push origin master
+git push -v origin master
 cd -
