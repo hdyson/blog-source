@@ -1,0 +1,66 @@
+---
+title: "Selecting which python to use with org-babel"
+date: 2020-06-07T20:56:00+01:00
+draft: false
+tags:
+- emacs
+- org-mode
+- conda
+- virtual environment
+---
+
+When working with [[https://orgmode.org/worg/org-contrib/babel/intro.html][org-babel]], it's useful to be able to select from which
+environment python is run.  There's the obvious brute-force approach -
+activating the appropriate environment before launching emacs - but quitting
+and restarting emacs is a lot of hassle if you need to change the environment
+in a running emacs.  Besides, I'm a big advocate of launching emacs on
+startup, and only exiting it when you shutdown your computer.  So here, I'll
+show how to choose the python being run within org-babel.
+
+
+<!--more-->
+
+** Identifying the python command to use
+
+We need the full path for the python command inside the conda or other virtual
+environment.  If you already know this, feel free to skip ahead.
+
+In your shell (if you want to do everything in emacs, ~M-x shell~ will launch
+one), activate your environment using the usual instructions.  Then run
+~which python~, and copy the shown path - we'll need it in the next step.
+
+** Setting the org-mode buffer to use the correct python
+
+Now that we have the path to the python executable, we just need to set the
+org-mode buffer to actually use it.  Use ~M-x add-file-local-variable~ to set
+the local varibale ~org-babel-python-command~ to the path of the python
+command (in double quotes) to use.  This will insert the definition of the
+local variable at the end of the buffer.  Now save the file, revert the
+buffer (~M-x revert-buffer)~, and confirm setting the local variable when
+prompted.
+
+Note that because this is local to a particular org-mode file, different files
+can run with different pythons.  Also, because this approach only relies on
+the path to the python executable, it's agnostic to whether ytou're using
+conda, venv or something more exotic.
+
+** Test that it works
+
+The following snippet should return the path to your chosen python executable
+without quotes:
+
+
+#+BEGIN_EXAMPLE
+#+BEGIN_SRC python
+import sys
+return sys.exec_prefix
+#+END_SRC
+
+#+RESULTS:
+: /Users/hdyson/anaconda3/envs/example
+#+END_EXAMPLE
+
+** Isn't this just things behaving as described in the docs?
+
+Pretty much - but I can never remember the ~add-file-local-variable~ command
+name, so this post is a note to myself.
