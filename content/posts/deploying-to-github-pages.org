@@ -8,7 +8,7 @@ tags:
 - Deployment
 ---
 
-A quick summary of deploying Hugo this generated site to [[https://pages.github.com/][Github pages]] (and hence [[https://hdyson.dev][hdyson.dev]]) via the instructions from the [[https://gohugo.io/hosting-and-deployment/hosting-on-github/][Hugo docs]].
+A quick summary of deploying this Hugo generated site to [[https://pages.github.com/][Github pages]] (and hence [[https://hdyson.dev][hdyson.dev]]) via the instructions from the [[https://gohugo.io/hosting-and-deployment/hosting-on-github/][Hugo docs]].
 
 <!--more-->
 
