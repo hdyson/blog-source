@@ -1,0 +1,32 @@
+---
+title: "Deploying With Github Actions"
+date: 2020-02-091T13:35:21Z
+draft: true
+Tags:
+- Hugo
+- Blog setup
+- Github
+- Github actions
+---
+
+* The problem
+
+Publishing posts via hugo is slightly more manual than I'd like.  Can we automate this with Github actions?
+
+<!--more-->
+
+* Background
+
+The setup for the initial deployment was described in 
+[[{{< ref "/posts/deploying-to-github-pages" >}}][this post]].
+
+For adding a new post or amendments to a post, the procedure is:
+
+1. Run the ~deploy.sh~ script.
+2. Commit and push the changes to the source repo.
+3. ~cd~ to ~public~ directory in source repo.
+4. ~git push~ to push to the built site repo.
+
+Can steps 3 and 4 be automated away with [[https://github.com/features/actions][Github actions]]?  I don't think we can
+simplify the other steps - since they are run locally, I'm not sure the remote
+github repository can replace them.  

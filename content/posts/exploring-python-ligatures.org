@@ -1,0 +1,52 @@
+---
+title: "Exploring Python Ligatures"
+date: 2021-04-07T20:55:35+01:00
+draft: false
+tags:
+- Emacs
+- Python
+---
+
+Pycharm has some pretty ligature support.  It'd be good to have similar in
+emacs - let's take a look at how to set that up.
+
+<!--more-->
+
+** Ligatures for python
+
+So ligature support is built in to emacs, via ~prettify-symbols-mode~.  This
+means we just need to activate this along with ~python-mode~, and then define
+some symbols to replace.
+
+My target is to have ligatures enabled for python mode only, rather than
+globally, which means ~global-prettify-symbols-mode~ is not the answer.
+
+By default, in python mode, ~prettify-symbols~ replaces ~lambda~, ~and~, and
+~or~ with symbols (check the buffer local variable ~prettify-symbols-alist~
+for the current value in a buffer).  Let's add a few more symbols.  From [[http://www.aliquote.org/post/enliven-your-emacs/][this
+aliquote blog post]], there's a few suitable suggestions:
+
+#+begin_src emacs-lisp
+    (defun add-python-mode-symbols ()
+	    (mapc (lambda (pair) (push pair prettify-symbols-alist))
+	     '(
+		("->" . 8594)
+		("=>" . 8658)
+		("<=" . 8804)
+		(">=" . 8805)
+		("<-" . 8592)
+		("!=" . 8800)
+		)))
+
+    (add-hook 'python-mode-hook (lambda ()
+				  (add-python-mode-symbols)
+				  (prettify-symbols-mode t)
+				  ))
+#+end_src
+
+[[http://www.modernemacs.com/post/prettify-mode/][This modern emacs blog post]] describes using ~describe-char~ and ~insert-char~
+to work out the number needed for a particular symbol, and the use of ~mapc~
+for adding the symbols in a sensible manner.  I've opted to isolate the
+definitions in a function to make it a little more transparent what is being
+added to the python hook.  I think (but haven't confirmed) that the symbols
+list needs to be defined before enabling ~prettify-symbols-mode~.

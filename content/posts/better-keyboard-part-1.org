@@ -1,0 +1,138 @@
+---
+title: "Better Keyboard Part 1"
+date: 2021-04-14T17:19:15+01:00
+draft: false
+tags:
+- Keyboard
+---
+
+This is the first of three *opinionated* posts on building a better keyboard.
+
+1. Why?  This post will cover both what's wrong with most keyboards, and why I
+   opted for a [[https://github.com/foostan/crkbd][Corne keyboard]].
+2. Hardware.  The next post will discuss actually building the keyboard.
+3. Software.  The final post will cover configuring the software to suit my needs.
+
+<!--more-->
+
+Just a reminder that most of this post is personal opinion - it's how I think
+and work, so both the problem being solved and the solution suits me.  If it
+also suits you, that's fantastic.  If you work in a different way, though,
+these solutions may not be appropriate for you and you may want to take a
+different path, or at least adapt my conclusions.
+
+* Requirements
+
+** Over-riding principle: adapt the computer rather than yourself.
+
+There's two extremes for working with a computer.  The first extreme is to
+adapt how you work to suit the constraints provided by your computer.  That's
+the wrong extreme.  The correct approach is to adapt your computer to suit
+your working patterns.  This extends from fixing the screen brightness to your
+taste, through customising emacs, and culminates in adapting your hardware.
+
+Standard keyboards aren't really fit for purpose, so rather than adapt to
+shoddy keyboards, let's consider the areas we'd like to improve.
+
+** Thumbs
+
+Thumbs are great.  Don't believe me?  It's a [[https://www.scifacts.net/human/opposable-thumbs/][scientific fact]]!  We have two of
+these amazing appendages, and on a normal keyboard, they have 1 key between
+them.  That's clearly a waste.  So our first requirement is:
+
+*Requirement 1: More keys for the thumbs*
+
+** Ortholinear
+
+Fingers are pretty good too.  But they don't bend sideways.  So why are the
+keys on a standard keyboard staggered such that ~Q~ isn't just above ~A~, but
+is up and to the left?  And similarly for all the other keys - they're
+stagered by row.  But fingers move up and down, not on the diagonals.
+
+In addition, try putting all your fingers on your desk as though you were
+resting your hands.  Notice how the tips of your fingers describe an arc,
+rather than a straight line.  So wouldn't it be good if your keyboard rows
+followed a similar arc?
+
+*Requirement 2: Column stagger, rather than row stagger*
+
+** Split
+
+On a conventional keyboard, your shoulders are closed and your wrists are
+angled outwards to get your hands in front of your body and on the keyboard.
+But since your left hand isn't supposed to be on the right side of the
+keyboard, and vice versa, why not just cut the keyboard in half and have the
+two halves roughly shoulder width apart?
+
+This also means you can move the halves to wherever is more comfortable.  
+
+*Requirement 3: Split keyboard*
+
+** Programmable
+
+This is driven by the over-riding requirement of being customisable.  The
+keyboard should be programmable.  We can replace caps lock with a control in
+any sensible OS, but why not take this further?  If I want to double tap the
+~U~ key to trigger an emacs re-compile (and I do ☺), I should be able to do
+that.
+
+*Requirement 4: Programmable firmware*
+
+** Minor requirements
+
+*** Switches
+
+It'd be good to use quality mechanical switches.  I like a good, satisfying
+clicking sound too.
+
+*** LEDs
+
+If I'm going to the effort of building a keyboard, I want it look good.  That
+means adding some bling, in the form of LEDs.  My target is at least 1 LED per
+key.
+
+*** Fewer keys
+
+Having argued for more thumb keys, I'm now going to sugget fewer keys for
+the fingers.  I want to limit how far the hands need to move, so want to try a
+keyboard with all the keys on or adjacent to the home row.  This does imply 3
+keys per thumb too: one for the resting position, and another key to each side
+of it.
+
+*** Assembly
+
+I know how to use a soldering iron, but I also know enough about using one to
+know that I'm competent with a soldering iron, rather than talented.  So
+something that's reasonably easy to build would be better.
+
+** Not a requirement: RSI
+
+You've probably noticed there's no mention of RSI prevention above.  I'm
+not in a position to evaluate whether there's more or less risk of RSI from a
+split, column-staggered, keyboard with fewer keys.  I use a normal keyboard at
+work (unsurprisingly, security people at work aren't too keen on plugging a
+keyboard with programmable firmware into their devices).  So I think there's a
+reasonable chance that switching between a normal keyboard and a split
+keyboard will be better than constantly using either, but don't really have an
+opinion on whether a split keyboard is better or worse for avoiding RSI.
+
+* Summary
+
+This gives us a list of requirements of:
+
+1. More thumb keys
+2. Column stagger
+3. Split keyboard
+4. Programmable firmware
+
+And nice to haves of:
+
+1. Mechanical switches
+2. Bling!
+3. Fewer keys
+4. Easy assembly
+
+This results in the [[https://github.com/foostan/crkbd][Corne keyboard]] being the option that best fits the
+requirements.  There's many, many other options - take a look in
+[[https://www.reddit.com/r/ErgoMechKeyboards/][r/ErgoMechKeyboards]] if you'd like to see some of the alternatives.  But, for
+me, the Corne was the option that best fit my requirements.
